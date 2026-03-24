@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nosso Casamento 💍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#fff;
+    color:#333;
+}
+
+/* FUNDO */
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:radial-gradient(circle,rgba(212,175,55,0.12),transparent 70%);
+    z-index:-1;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:40px 20px;
+    text-align:center;
+}
+
+/* TITULO */
+h1{
+    font-size:40px;
+    color:#d4af37;
+}
+
+.subtitle{
+    margin-bottom:30px;
+}
+
+/* CONTAGEM */
+.countdown{
+    margin:40px 0;
+}
+
+.countdown h2{
+    color:#d4af37;
+}
+
+.timer{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:15px;
+    flex-wrap:wrap;
+}
+
+.box{
+    background:white;
+    padding:15px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.box span{
+    font-size:26px;
+    color:#d4af37;
+}
+
+/* BOTÃO MAPA */
+.mapa{
+    margin-top:25px;
+}
+
+.btn-mapa{
+    display:inline-block;
+    background:linear-gradient(135deg,#d4af37,#b8962e);
+    color:white;
+    padding:12px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    transition:0.3s;
+    box-shadow:0 5px 15px rgba(212,175,55,0.4);
+}
+
+.btn-mapa:hover{
+    transform:translateY(-3px) scale(1.05);
+}
+
+/* TEXTO */
+.texto{
+    max-width:750px;
+    margin:50px auto;
+    line-height:1.9;
+    font-size:17px;
+}
+
+/* FOTOS */
+.fotos{
+    display:flex;
+    justify-content:center;
+    margin:50px 0;
+}
+
+.card{
+    width:220px;
+    height:300px;
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.5s;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.card:nth-child(1){transform:translateX(40px) scale(0.9);}
+.card:nth-child(3){transform:translateX(-40px) scale(0.9);}
+
+.fotos:hover .card{
+    transform:translateX(0) scale(1);
+}
+
+.card:hover{
+    border:3px solid #d4af37;
+    transform:scale(1.05);
+}
+
+/* PRESENTES */
+.presentes{
+    margin-top:60px;
+}
+
+.presentes h2{
+    color:#d4af37;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
+
+.presente{
+    background:white;
+    padding:15px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.presente:hover{
+    transform:translateY(-5px);
+    border:2px solid #d4af37;
+}
+
+.presente img{
+    width:100%;
+    border-radius:10px;
+}
+
+.presente a{
+    display:block;
+    margin-top:10px;
+    background:#d4af37;
+    color:white;
+    padding:8px;
+    border-radius:10px;
+    text-decoration:none;
+}
+
+/* PIX */
+.pix{
+    margin-top:60px;
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 25px rgba(0,0,0,0.1);
+}
+
+.pix h2{
+    color:#d4af37;
+}
+
+.pix-box{
+    margin-top:15px;
+    font-size:18px;
+    font-weight:600;
+    background:#f9f9f9;
+    padding:15px;
+    border-radius:10px;
+}
+
+/* PLAYER */
+.player{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:white;
+    padding:12px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+button{
+    border:none;
+    background:#d4af37;
+    color:white;
+    padding:10px;
+    border-radius:50%;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Nosso Casamento 💍</h1>
+<p class="subtitle">Vocês fazem parte desse momento</p>
+
+<!-- CONTAGEM -->
+<div class="countdown">
+<h2>O Grande Dia 🤍</h2>
+
+<div class="timer">
+<div class="box"><span id="dias"></span>Dias</div>
+<div class="box"><span id="horas"></span>Horas</div>
+<div class="box"><span id="minutos"></span>Min</div>
+<div class="box"><span id="segundos"></span>Seg</div>
+</div>
+
+<div class="mapa">
+<a href="https://maps.app.goo.gl/AAxvEx6Ga3pkBY1m6" target="_blank" class="btn-mapa">
+📍 Ver Local da Cerimônia
+</a>
+</div>
+
+</div>
+
+<!-- TEXTO PADRINHOS -->
+<div class="texto">
+<p>
+Aqui damos um dos passos mais importantes das nossas vidas, e não poderíamos viver esse momento sem pessoas tão especiais ao nosso lado. 💛
+</p>
+
+<p>
+Vocês não são apenas convidados… são parte da nossa história, da nossa caminhada e de tudo que nos trouxe até aqui.
+</p>
+
+<p>
+Cada conselho, cada risada e cada momento compartilhado tornaram esse dia ainda mais significativo para nós.
+</p>
+
+<p>
+Por isso, é uma alegria imensa ter vocês como nossos padrinhos. Obrigado por fazerem parte desse sonho e por estarem conosco nesse momento tão único.
+</p>
+
+<p><b>Moisés & Letícia 💖</b></p>
+</div>
+
+<!-- FOTOS -->
+<div class="fotos">
+<div class="card"><img src="fotos/foto1.jpg"></div>
+<div class="card"><img src="fotos/foto2.jpg"></div>
+<div class="card"><img src="fotos/foto3.jpg"></div>
+</div>
+
+<!-- PRESENTES -->
+<div class="presentes">
+<h2>Lista de Presentes 🎁</h2>
+
+<div class="grid">
+
+<div class="presente">
+<img src="fotos/foto1.jpg">
+<a href="LINK_AQUI" target="_blank">Ver presente</a>
+</div>
+
+<div class="presente">
+<img src="fotos/foto2.jpg">
+<a href="LINK_AQUI" target="_blank">Ver presente</a>
+</div>
+
+<div class="presente">
+<img src="fotos/foto3.jpg">
+<a href="LINK_AQUI" target="_blank">Ver presente</a>
+</div>
+
+</div>
+</div>
+
+<!-- PIX -->
+<div class="pix">
+<h2>Contribuição 💛</h2>
+<p>Se desejar nos abençoar de outra forma, você pode contribuir via PIX:</p>
+
+<div class="pix-box">
+📱 (82) 99935-7319
+</div>
+</div>
+
+</div>
+
+<!-- PLAYER -->
+<div class="player">
+<button onclick="toggleMusic()">▶</button>
+</div>
+
+<audio id="musica" autoplay loop>
+<source src="musica/musica.mp3">
+</audio>
+
+<script>
+
+/* CONTAGEM */
+const data = new Date("Oct 17, 2026 00:00:00").getTime();
+
+setInterval(()=>{
+let agora = new Date().getTime();
+let tempo = data - agora;
+
+document.getElementById("dias").innerText=Math.floor(tempo/(1000*60*60*24));
+document.getElementById("horas").innerText=Math.floor((tempo%(1000*60*60*24))/(1000*60*60));
+document.getElementById("minutos").innerText=Math.floor((tempo%(1000*60*60))/(1000*60));
+document.getElementById("segundos").innerText=Math.floor((tempo%(1000*60))/1000);
+
+},1000);
+
+/* MUSICA */
+let music = document.getElementById("musica");
+let playing = true;
+
+function toggleMusic(){
+if(playing){music.pause();playing=false;}
+else{music.play();playing=true;}
+}
+
+window.addEventListener("click",()=>{music.play();});
+
+</script>
+
+</body>
+</html>
